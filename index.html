@@ -12,6 +12,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!--Header and Menu Section-->
     <header class="container">
@@ -31,7 +32,7 @@
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -50,17 +51,18 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="class-input" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <p><span id="class-increase">+</span>
+                        <span id="class-decrease">-</span></p>
                 </div>
             </div>
             
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <p> <span>+</span> <span>-</span> </p>
@@ -103,7 +105,28 @@
         </div>
     </section>
 
-    <!--Thank You-->
+    <script>
+        // Increase option handler
+        document.getElementById("class-increase").addEventListener("click", function(){
+            const classInput = document.getElementById("class-input");
+            const classInputNumber = parseInt(classInput.value);
+            const classNewNumber = classInputNumber + 1;
+            classInput.value = classNewNumber;
+            const classTotalCost = classNewNumber * 150; 
+            document.getElementById()
+        })
+
+        // Decrease option handler
+        document.getElementById("class-decrease").addEventListener("click", function(){
+            const classInput = document.getElementById("class-input");
+            const classInputNumber = parseInt(classInput.value);
+            const classNewNumber = classInputNumber - 1;
+            classInput.value = classNewNumber;
+        })
+        function name(params) {
+            
+        }
+    </script>
 </body>
 
 </html>
