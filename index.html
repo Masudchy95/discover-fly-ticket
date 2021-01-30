@@ -97,7 +97,8 @@
                 </div>
             </div>
         </div>
-        <button id="booking-btn" class="btn-style">Book Now</button>
+        <button onclick="bookingBtn()" class="btn-style">Book Now</button>
+        <p id="text-message"></p>
     </div>
     
     <div class="booking-content">
@@ -108,9 +109,16 @@
 
     <script>
 // Booking button handler
-        document.getElementById("booking-btn").addEventListener("click", function(){
-            alert("Total Charge = ");
-        })
+        function bookingBtn() {
+        var text;
+        if (confirm("Do you want to confirm the tickets?")) {
+            text = "CONGRATULATION, Your tickets are confirmed.";
+        }
+        else {
+            text = "SORRY, You cancelled the booking.";
+        }
+        document.getElementById("text-message").innerHTML = text;
+        }
 
 // Ticket counting calculation
         function ticketPurchaseQuantity(category, isIncrease) {
